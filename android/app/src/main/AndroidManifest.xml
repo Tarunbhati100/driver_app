@@ -1,8 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.driver_app">
+    package="com.mymegaminds.meecar">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="driver_app"
         android:icon="@mipmap/ic_launcher">
+          
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "482727818900",
+    "project_id": "meecar-85e42",
+    "storage_bucket": "meecar-85e42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482727818900:android:5b678b7989dc774e52e681",
+        "android_client_info": {
+          "package_name": "com.mymegaminds.meecar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482727818900-j8j5mig3291fdpevkirdapjimm828af8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBm4XAjwdxeOx3Xg-HZXlmN06Rfl51q6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482727818900-j8j5mig3291fdpevkirdapjimm828af8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
