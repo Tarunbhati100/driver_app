@@ -57,6 +57,9 @@ class _LoginPageState extends State<LoginPage> {
                           decoration: InputDecoration(
                             // icon: Icon(Icons.email),
                             labelText: "Email",
+                            border: InputBorder.none,
+                            filled: true,
+                            fillColor: Colors.grey[200],
                           ),
                           keyboardType: TextInputType.emailAddress,
                           autocorrect: false,
@@ -72,6 +75,9 @@ class _LoginPageState extends State<LoginPage> {
                           decoration: InputDecoration(
                               // icon: Icon(Icons.lock),
                               labelText: "Password",
+                              border: InputBorder.none,
+                              filled: true,
+                              fillColor: Colors.grey[200],
                               suffixIcon: IconButton(
                                 icon: isVisible
                                     ? Icon(Icons.visibility)

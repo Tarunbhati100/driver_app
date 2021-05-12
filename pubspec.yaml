@@ -29,11 +29,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   firebase_auth:
-  cloud_firestore:
   generic_bloc_provider:  
   modal_progress_hud:  
   flushbar:
-
+  cloud_firestore: ^2.1.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

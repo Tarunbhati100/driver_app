@@ -5,7 +5,7 @@ class User {
   String password;
   String userId;
   String city;
-  bool verfiy;
+  bool verify;
   bool profilecomplete;
   User(
       {this.name,
@@ -13,7 +13,7 @@ class User {
       this.email,
       this.phoneNumber,
       this.city,
-      this.verfiy,
+      this.verify,
       this.profilecomplete});
   User.fromMap(Map<String, dynamic> map) {
     this.name = map["name"] ?? "";
@@ -22,7 +22,7 @@ class User {
     this.password = map["password"];
     this.userId = map["userId"] ?? "";
     this.city = map["city"];
-    this.verfiy = map["verify"];
+    this.verify = map["verify"];
     this.profilecomplete = map["profilecomplete"];
   }
   toJson(String userId) {
@@ -32,7 +32,7 @@ class User {
       "phoneNumber": this.phoneNumber,
       "password": this.password,
       "city": this.city,
-      "verify": this.verfiy,
+      "verify": this.verify,
       "profilecomplete": this.profilecomplete,
     };
   }

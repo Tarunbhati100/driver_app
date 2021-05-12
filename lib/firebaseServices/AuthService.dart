@@ -10,10 +10,13 @@ class AuthServices {
         await FirebaseFirestore.instance.collection("Drivers").doc(uid).get();
     if (document.exists) {
       return User(
-          email: document.data()["email"] ?? "",
-          name: document.data()["name"] ?? "",
-          phoneNumber: document.data()["phoneNumber"] ?? "",
-          city: document.data()["city"] ?? "");
+        email: document.data()["email"] ?? "",
+        name: document.data()["name"] ?? "",
+        phoneNumber: document.data()["phoneNumber"] ?? "",
+        city: document.data()["city"] ?? "",
+        verify: document.data()["verify"] ?? "",
+        profilecomplete: document.data()["profilecomplete"] ?? "",
+      );
     } else {
       return null;
     }

@@ -54,98 +54,132 @@ class _RegisterPageState extends State<RegisterPage> {
                 "Let\'s start with creating your \n account",
                 style: TextStyle(fontSize: 18),
               ),
-              TextFormField(
-                validator: (value) => _nameController.text.isEmpty
-                    ? "Please enter your name !!"
-                    : null,
-                controller: _nameController,
-                decoration: InputDecoration(
-                  // icon: Icon(Icons.person),
-                  labelText: "Name",
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: (value) => _nameController.text.isEmpty
+                      ? "Please enter your name !!"
+                      : null,
+                  controller: _nameController,
+                  decoration: InputDecoration(
+                    labelText: "Name",
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                  ),
+                  keyboardType: TextInputType.name,
+                  autocorrect: false,
                 ),
-                keyboardType: TextInputType.name,
-                autocorrect: false,
               ),
-              TextFormField(
-                validator: (value) => _emailController.text.isEmpty
-                    ? "Please enter your email !!"
-                    : null,
-                controller: _emailController,
-                decoration: InputDecoration(
-                  // icon: Icon(Icons.email),
-                  labelText: "Email",
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: (value) => _emailController.text.isEmpty
+                      ? "Please enter your email !!"
+                      : null,
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    labelText: "Email",
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+                  autocorrect: false,
                 ),
-                keyboardType: TextInputType.emailAddress,
-                autocorrect: false,
               ),
-              TextFormField(
-                validator: (value) => _numberController.text.isEmpty
-                    ? "Please enter your phone number!!"
-                    : null,
-                controller: _numberController,
-                decoration: InputDecoration(
-                  // icon: Icon(Icons.phone_android_outlined),
-                  labelText: "Phone Number",
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: (value) => _numberController.text.isEmpty
+                      ? "Please enter your phone number!!"
+                      : null,
+                  controller: _numberController,
+                  decoration: InputDecoration(
+                    // icon: Icon(Icons.phone_android_outlined),
+                    labelText: "Phone Number",
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                  ),
+                  keyboardType: TextInputType.phone,
+                  autocorrect: false,
                 ),
-                keyboardType: TextInputType.phone,
-                autocorrect: false,
               ),
-              TextFormField(
-                validator: (value) => _cityController.text.isEmpty
-                    ? "Please enter your city!!"
-                    : null,
-                controller: _cityController,
-                decoration: InputDecoration(
-                  // icon: Icon(Icons.location_city),
-                  labelText: "City",
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: (value) => _cityController.text.isEmpty
+                      ? "Please enter your city!!"
+                      : null,
+                  controller: _cityController,
+                  decoration: InputDecoration(
+                    // icon: Icon(Icons.location_city),
+                    labelText: "City",
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                  ),
+                  keyboardType: TextInputType.name,
+                  autocorrect: false,
                 ),
-                keyboardType: TextInputType.name,
-                autocorrect: false,
               ),
-              TextFormField(
-                validator: (value) => _passwordController.text.isEmpty
-                    ? "Please enter your password !!"
-                    : null,
-                controller: _passwordController,
-                decoration: InputDecoration(
-                    // icon: Icon(Icons.lock),
-                    labelText: "Password",
-                    suffixIcon: IconButton(
-                      icon: isVisible
-                          ? Icon(Icons.visibility)
-                          : Icon(Icons.visibility_off),
-                      onPressed: () {
-                        setState(() {
-                          isVisible = !isVisible;
-                        });
-                      },
-                    )),
-                obscureText: !isVisible,
-                autocorrect: false,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: (value) => _passwordController.text.isEmpty
+                      ? "Please enter your password !!"
+                      : null,
+                  controller: _passwordController,
+                  decoration: InputDecoration(
+                      // icon: Icon(Icons.lock),
+                      labelText: "Password",
+                      border: InputBorder.none,
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                      suffixIcon: IconButton(
+                        icon: isVisible
+                            ? Icon(Icons.visibility)
+                            : Icon(Icons.visibility_off),
+                        onPressed: () {
+                          setState(() {
+                            isVisible = !isVisible;
+                          });
+                        },
+                      )),
+                  obscureText: !isVisible,
+                  autocorrect: false,
+                ),
               ),
-              TextFormField(
-                validator: (value) {
-                  if (value != _passwordController.text) {
-                    return "Password don't matched !!";
-                  }
-                  return null;
-                },
-                controller: _confirmController,
-                decoration: InputDecoration(
-                    // icon: Icon(Icons.lock),
-                    labelText: "Confirm Password",
-                    suffixIcon: IconButton(
-                      icon: isVisible
-                          ? Icon(Icons.visibility)
-                          : Icon(Icons.visibility_off),
-                      onPressed: () {
-                        setState(() {
-                          isVisible = !isVisible;
-                        });
-                      },
-                    )),
-                obscureText: !isVisible,
-                autocorrect: false,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value != _passwordController.text) {
+                      return "Password don't matched !!";
+                    }
+                    return null;
+                  },
+                  controller: _confirmController,
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                      // icon: Icon(Icons.lock),
+                      labelText: "Confirm Password",
+                      suffixIcon: IconButton(
+                        icon: isVisible
+                            ? Icon(Icons.visibility)
+                            : Icon(Icons.visibility_off),
+                        onPressed: () {
+                          setState(() {
+                            isVisible = !isVisible;
+                          });
+                        },
+                      )),
+                  obscureText: !isVisible,
+                  autocorrect: false,
+                ),
               ),
               SizedBox(
                 height: 20,
@@ -222,7 +256,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               _numberController.text.toLowerCase().trim(),
                           city: _cityController.text.toLowerCase().trim(),
                           password: _passwordController.text.trim(),
-                          verfiy: false,
+                          verify: false,
                           profilecomplete: false,
                         );
                         _userBloc.userEventSink

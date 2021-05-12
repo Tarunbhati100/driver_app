@@ -1,6 +1,7 @@
 import 'package:driver_app/AuthScreens/WelcomePage.dart';
 import 'package:driver_app/Screens/HomePage.dart';
-import 'package:driver_app/Screens/profiledriver.dart';
+import 'package:driver_app/Screens/confirmationpage.dart';
+import 'package:driver_app/Screens/languageselect.dart';
 import 'package:driver_app/firebaseServices/AuthService.dart';
 import 'package:flutter/material.dart';
 
@@ -31,14 +32,20 @@ class _RouteScreenState extends State<RouteScreen> {
 
     final driver = await _database.getUserProfile(user.uid);
 
-    if (driver.profilecomplete != false) {
-      screen = ProfileDriver(
-        user: driver,
-      );
-    } else if (driver.verfiy == true) {
-      screen = HomeScreen(
-        user: driver,
-      );
+    if (driver != null) {
+      if (driver.profilecomplete == true) {
+        if (driver.verify == true) {
+          screen = HomeScreen(
+            user: driver,
+          );
+        } else {
+          screen = Confirmationpage();
+        }
+      } else {
+        screen = Languageselect(
+          user: driver,
+        );
+      }
     } else {
       screen = WelcomePage();
     }
