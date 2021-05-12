@@ -33,6 +33,9 @@ dependencies:
   modal_progress_hud:  
   flushbar:
   cloud_firestore: ^2.1.0
+  image_picker:
+  firebase_storage: 
+  firebase_core: 
   
 dev_dependencies:
   flutter_test:
