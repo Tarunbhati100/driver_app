@@ -23,62 +23,179 @@ class _HomeDrawerState extends State<HomeDrawer> {
   final _auth = AuthServices();
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          SizedBox(
-              height: MediaQuery.of(context).size.height * 0.2,
-              width: MediaQuery.of(context).size.width,
-              child: Container(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.07,
-                      left: MediaQuery.of(context).size.width * 0.05),
-                  color: Colors.yellow[800],
-                  child: Text(
-                      "Welcome " +
-                          "${widget.user.name == null ? "" : widget.user.name}",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w700)))),
-          Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.amberAccent,
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.home,
-                    color: Colors.yellow[800],
-                    size: 30.0,
-                  ),
-                  title: Text(
-                    "Home",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-              )),
-          ListTile(
-            leading: Icon(
-              Icons.settings,
-              color: Colors.yellow[800],
+    return Theme(
+      data: Theme.of(context).copyWith(
+        canvasColor: Colors.black,
+      ),
+      child: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            SizedBox(
+                height: MediaQuery.of(context).size.height * 0.14,
+                width: MediaQuery.of(context).size.width,
+                child: Container(
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.07,
+                        left: MediaQuery.of(context).size.width * 0.05),
+                    color: Colors.black,
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.white,
+                          child: Icon(
+                            Icons.person,
+                            color: Colors.black,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                            "${widget.user.name == null ? "" : widget.user.name}",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w700)),
+                      ],
+                    ))),
+            Divider(
+              color: Colors.white,
             ),
-            title: Text("Logout"),
-            onTap: () async {
-              _auth.signOut();
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) {
-                return WelcomePage();
-              }), (route) => false);
-            },
-          ),
-        ],
+            ListTile(
+              leading: Icon(
+                Icons.home,
+                color: Colors.white,
+                size: 30.0,
+              ),
+              title: Text(
+                "Home",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 22),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.hourglass_top_sharp,
+                color: Colors.white,
+                size: 30.0,
+              ),
+              title: Text(
+                "Promotions",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 22),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.monetization_on_rounded,
+                color: Colors.white,
+                size: 30.0,
+              ),
+              title: Text(
+                "Earning",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 22),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.wallet_travel_sharp,
+                color: Colors.white,
+                size: 30.0,
+              ),
+              title: Text(
+                "Wallet",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 22),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.account_balance_wallet_rounded,
+                color: Colors.white,
+                size: 30.0,
+              ),
+              title: Text(
+                "Account",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 22),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            Divider(
+              color: Colors.white,
+            ),
+            ListTile(
+              title: Text(
+                "Help",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 15),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              title: Text(
+                "Tips & info",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 15),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              title: Text(
+                "Logout",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 22),
+              ),
+              onTap: () async {
+                _auth.signOut();
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) {
+                  return WelcomePage();
+                }), (route) => false);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
