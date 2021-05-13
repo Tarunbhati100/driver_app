@@ -1,4 +1,5 @@
 import 'package:driver_app/Screens/widgets/Photoclick.dart';
+import 'package:driver_app/Screens/widgets/helpdialog.dart';
 import 'package:flutter/material.dart';
 
 class Profiledetailphoto extends StatefulWidget {
@@ -7,19 +8,6 @@ class Profiledetailphoto extends StatefulWidget {
 }
 
 class _ProfiledetailphotoState extends State<Profiledetailphoto> {
-  void displayBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-        context: context,
-        builder: (ctx) {
-          return Container(
-            height: MediaQuery.of(context).size.height * 0.4,
-            child: Center(
-              child: Text("Welcome to AndroidVille!"),
-            ),
-          );
-        });
-  }
-
   void openDialog() {
     Navigator.of(context).push(new MaterialPageRoute<Null>(
         builder: (BuildContext context) {
@@ -34,7 +22,7 @@ class _ProfiledetailphotoState extends State<Profiledetailphoto> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("CarMee"),
+          title: Text("MeeCar"),
           backgroundColor: Colors.black,
           automaticallyImplyLeading: false,
           actions: [

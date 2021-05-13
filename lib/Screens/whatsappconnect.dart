@@ -1,5 +1,6 @@
 import 'package:driver_app/Screens/driverdatalist.dart';
 import 'package:driver_app/Screens/widgets/dialoginfomation.dart';
+import 'package:driver_app/Screens/widgets/helpdialog.dart';
 import 'package:flutter/material.dart';
 
 class WhatsappConnect extends StatefulWidget {
@@ -8,19 +9,6 @@ class WhatsappConnect extends StatefulWidget {
 }
 
 class _WhatsappConnectState extends State<WhatsappConnect> {
-  void displayBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-        context: context,
-        builder: (ctx) {
-          return Container(
-            height: MediaQuery.of(context).size.height * 0.4,
-            child: Center(
-              child: Text("Welcome to AndroidVille!"),
-            ),
-          );
-        });
-  }
-
   void openDialog() {
     Navigator.of(context).push(new MaterialPageRoute<Null>(
         builder: (BuildContext context) {
@@ -34,7 +22,7 @@ class _WhatsappConnectState extends State<WhatsappConnect> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Carmee"),
+        title: Text("MeeCar"),
         backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
         actions: [

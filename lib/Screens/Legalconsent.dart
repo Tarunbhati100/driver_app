@@ -1,5 +1,6 @@
 import 'package:driver_app/Screens/widgets/dialoginfomation.dart';
 import 'package:driver_app/Screens/whatsappconnect.dart';
+import 'package:driver_app/Screens/widgets/helpdialog.dart';
 import 'package:flutter/material.dart';
 
 class LegalConsent extends StatefulWidget {
@@ -8,19 +9,6 @@ class LegalConsent extends StatefulWidget {
 }
 
 class _LegalConsentState extends State<LegalConsent> {
-  void displayBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-        context: context,
-        builder: (ctx) {
-          return Container(
-            height: MediaQuery.of(context).size.height * 0.4,
-            child: Center(
-              child: Text("Welcome to AndroidVille!"),
-            ),
-          );
-        });
-  }
-
   void openDialog() {
     Navigator.of(context).push(new MaterialPageRoute<Null>(
         builder: (BuildContext context) {
@@ -34,7 +22,7 @@ class _LegalConsentState extends State<LegalConsent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Carmee"),
+        title: Text("MeeCar"),
         backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
         actions: [
