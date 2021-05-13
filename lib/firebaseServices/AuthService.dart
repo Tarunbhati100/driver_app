@@ -16,6 +16,11 @@ class AuthServices {
         city: document.data()["city"] ?? "",
         verify: document.data()["verify"] ?? "",
         profilecomplete: document.data()["profilecomplete"] ?? "",
+        profilephoto: document.data()["profilephoto"] ?? "",
+        drivinglicense: document.data()["drivinglicense"] ?? "",
+        pancard: document.data()["pancard"] ?? "",
+        vehicleinsurance: document.data()["vehicleinsurance"] ?? "",
+        rc: document.data()["rc"] ?? "",
       );
     } else {
       return null;

@@ -1,15 +1,12 @@
-import 'dart:io';
-
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:driver_app/Screens/widgets/Photoclick.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
-class Profiledetail extends StatefulWidget {
+class Profiledetailphoto extends StatefulWidget {
   @override
-  _ProfiledetailState createState() => _ProfiledetailState();
+  _ProfiledetailphotoState createState() => _ProfiledetailphotoState();
 }
 
-class _ProfiledetailState extends State<Profiledetail> {
+class _ProfiledetailphotoState extends State<Profiledetailphoto> {
   void displayBottomSheet(BuildContext context) {
     showModalBottomSheet(
         context: context,
@@ -26,7 +23,9 @@ class _ProfiledetailState extends State<Profiledetail> {
   void openDialog() {
     Navigator.of(context).push(new MaterialPageRoute<Null>(
         builder: (BuildContext context) {
-          return new Photoclick();
+          return new Photoclick(
+            nameid: "profilephoto",
+          );
         },
         fullscreenDialog: true));
   }
@@ -35,7 +34,7 @@ class _ProfiledetailState extends State<Profiledetail> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Uber"),
+          title: Text("CarMee"),
           backgroundColor: Colors.black,
           automaticallyImplyLeading: false,
           actions: [
@@ -151,133 +150,5 @@ class _ProfiledetailState extends State<Profiledetail> {
             ),
           )),
         ));
-  }
-}
-
-class Photoclick extends StatefulWidget {
-  final click;
-  Photoclick({this.click});
-  @override
-  _PhotoclickState createState() => _PhotoclickState();
-}
-
-class _PhotoclickState extends State<Photoclick> {
-  bool tapsave = true;
-  bool tapretake = false;
-
-  File _image;
-  final picker = ImagePicker();
-
-  Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
-
-    setState(() {
-      if (pickedFile != null) {
-        _image = File(pickedFile.path);
-      } else {
-        print('No image selected.');
-      }
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-        ),
-        iconTheme: IconThemeData(
-          color: Colors.black,
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        // title: const Text('Dialog Magic'),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Center(
-                  child: Container(
-                    // color: Colors.white,
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height / 4,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: NetworkImage(
-                              'https://googleflutter.com/sample_image.jpg'),
-                          fit: BoxFit.fill),
-                    ),
-                  ),
-                ),
-                RichText(
-                    text: TextSpan(children: [
-                  TextSpan(
-                      text: "\n\nWant to use this photo?\n\n",
-                      style: TextStyle(color: Colors.black, fontSize: 18)),
-                  TextSpan(
-                      text:
-                          "By tapping SAVE ,you agree that uber or a trusted vendor may collect and process your photos with technology that allows us to verify your identify.\n",
-                      style: TextStyle(color: Colors.black, fontSize: 15))
-                ]))
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(MediaQuery.of(context).size.width / 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                RaisedButton(
-                  color: tapretake ? Colors.blue : Colors.white,
-                  shape: RoundedRectangleBorder(),
-                  onPressed: () => getImage,
-                  //  () {
-
-                  //   setState(() {
-                  //     tapsave = false;
-                  //     tapretake = true;
-                  //   });
-                  //   // Navigator.push(
-                  //   //     context,
-                  //   //     MaterialPageRoute(
-                  //   //         builder: (context) => RegisterPage()));
-                  // },
-                  child: Text("RETAKE"),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 5,
-                ),
-                RaisedButton(
-                  color: tapsave ? Colors.blue : Colors.white,
-                  shape: RoundedRectangleBorder(),
-                  onPressed: () {
-                    setState(() {
-                      tapsave = true;
-                      tapretake = false;
-                    });
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => LoginPage()));
-                  },
-                  child: Text("SAVE"),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
   }
 }

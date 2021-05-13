@@ -1,6 +1,5 @@
 import 'package:driver_app/Models/user.dart';
 import 'package:driver_app/Screens/Legalconsent.dart';
-import 'package:driver_app/Screens/profiledetaildriver.dart';
 import 'package:flutter/material.dart';
 
 class Languageselect extends StatefulWidget {
@@ -35,7 +34,7 @@ class _LanguageselectState extends State<Languageselect> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Uber"),
+        title: Text("Carmee"),
         backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
         actions: [

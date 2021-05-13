@@ -1,6 +1,7 @@
 import 'package:driver_app/AuthScreens/WelcomePage.dart';
 import 'package:driver_app/Screens/HomePage.dart';
 import 'package:driver_app/Screens/confirmationpage.dart';
+import 'package:driver_app/Screens/driverdatalist.dart';
 import 'package:driver_app/Screens/languageselect.dart';
 import 'package:driver_app/firebaseServices/AuthService.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +35,7 @@ class _RouteScreenState extends State<RouteScreen> {
 
     if (driver != null) {
       if (driver.profilecomplete == true) {
+        // if(driver.profilephoto==""||driver.drivinglicense==""||driver.rc==""||driver.pancard=="")
         if (driver.verify == true) {
           screen = HomeScreen(
             user: driver,
@@ -42,7 +44,7 @@ class _RouteScreenState extends State<RouteScreen> {
           screen = Confirmationpage();
         }
       } else {
-        screen = Languageselect(
+        screen = Driverdatalist(
           user: driver,
         );
       }

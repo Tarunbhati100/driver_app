@@ -1,5 +1,5 @@
-import 'package:driver_app/Screens/Legalconsent.dart';
-import 'package:driver_app/Screens/profiledetaildriver.dart';
+import 'package:driver_app/Screens/driverdatalist.dart';
+import 'package:driver_app/Screens/widgets/dialoginfomation.dart';
 import 'package:flutter/material.dart';
 
 class WhatsappConnect extends StatefulWidget {
@@ -34,7 +34,7 @@ class _WhatsappConnectState extends State<WhatsappConnect> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Uber"),
+        title: Text("Carmee"),
         backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
         actions: [
@@ -142,7 +142,7 @@ class _WhatsappConnectState extends State<WhatsappConnect> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Profiledetail()));
+                                      builder: (context) => Driverdatalist()));
                               openDialog();
                             },
                             child: Padding(
