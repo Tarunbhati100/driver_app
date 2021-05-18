@@ -1,7 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:driver_app/AuthScreens/WelcomePage.dart';
 import 'package:driver_app/Bloc/UserBloc.dart';
 import 'package:driver_app/Models/user.dart';
+import 'package:driver_app/Screens/AccountPage.dart';
+import 'package:driver_app/Screens/Earning.dart';
+import 'package:driver_app/Screens/Promotions.dart';
 import 'package:driver_app/firebaseServices/AuthService.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
@@ -94,6 +96,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
               ),
               onTap: () {
                 Navigator.of(context).pop();
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PromotionsPage()));
               },
             ),
             ListTile(
@@ -111,6 +115,9 @@ class _HomeDrawerState extends State<HomeDrawer> {
               ),
               onTap: () {
                 Navigator.of(context).pop();
+
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => EarningsPage()));
               },
             ),
             ListTile(
@@ -145,6 +152,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
               ),
               onTap: () {
                 Navigator.of(context).pop();
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AccountPage()));
               },
             ),
             Divider(

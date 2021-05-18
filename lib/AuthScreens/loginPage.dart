@@ -3,7 +3,6 @@ import 'package:driver_app/Screens/RouteScreen.dart';
 import 'package:driver_app/firebaseServices/AuthService.dart';
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 
 class LoginPage extends StatefulWidget {

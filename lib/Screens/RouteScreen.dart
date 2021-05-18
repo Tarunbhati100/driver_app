@@ -37,7 +37,7 @@ class _RouteScreenState extends State<RouteScreen> {
       if (driver.profilecomplete == true) {
         // if(driver.profilephoto==""||driver.drivinglicense==""||driver.rc==""||driver.pancard=="")
         if (driver.verify == true) {
-          screen = HomeScreen(
+          screen = MyHomePage(
             user: driver,
           );
         } else {

@@ -1,4 +1,3 @@
-import 'package:driver_app/AuthScreens/WelcomePage.dart';
 import 'package:driver_app/Bloc/UserBloc.dart';
 import 'package:driver_app/Bloc/UserEvent.dart';
 import 'package:driver_app/Models/user.dart';
@@ -8,7 +7,6 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
