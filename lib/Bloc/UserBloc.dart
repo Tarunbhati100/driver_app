@@ -16,8 +16,8 @@ class UserBloc extends Bloc {
   Stream<UserEvent> get _userEventStream => _userEventController.stream;
   StreamController<User> _userDataController =
       StreamController<User>.broadcast();
-  StreamSink<User> get tutorDataSink => _userDataController.sink;
-  Stream<User> get tutorDataStream => _userDataController.stream;
+  StreamSink<User> get userDataSink => _userDataController.sink;
+  Stream<User> get userDataStream => _userDataController.stream;
 
   UserBloc() {
     _userEventStream.listen(mapEventToState);
@@ -28,6 +28,14 @@ class UserBloc extends Bloc {
           .collection("Drivers")
           .doc(event.userId)
           .set(event.user.toJson(event.user.userId));
+    } else if (event is FetchUser) {
+      FirebaseFirestore.instance
+          .collection("Drivers")
+          .doc(event.userId)
+          .snapshots()
+          .listen((event) {
+        userDataSink.add(User.fromMap(event.data()));
+      });
     }
   }
 

@@ -33,13 +33,13 @@ class User {
     this.password = map["password"];
     this.userId = map["userId"] ?? "";
     this.city = map["city"];
-    this.verify = map["verify"];
-    this.profilecomplete = map["profilecomplete"];
-    this.profilephoto = map["profilephoto"];
-    this.drivinglicense = map["drivinglicense"];
-    this.pancard = map["pancard"];
-    this.vehicleinsurance = map["vehicleinsurance"];
-    this.rc = map["rc"];
+    this.verify = map["verify"] ?? false;
+    this.profilecomplete = map["profilecomplete"] ?? false;
+    this.profilephoto = map["profilephoto"] ?? "";
+    this.drivinglicense = map["drivinglicense"] ?? "";
+    this.pancard = map["pancard"] ?? "";
+    this.vehicleinsurance = map["vehicleinsurance"] ?? "";
+    this.rc = map["rc"] ?? "";
   }
   toJson(String userId) {
     return {

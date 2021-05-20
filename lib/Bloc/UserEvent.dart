@@ -7,3 +7,7 @@ class AddUser extends UserEvent {
   final User user;
   AddUser({this.userId, this.user});
 }
+class FetchUser extends UserEvent {
+  final String userId;
+  FetchUser({this.userId});
+}
