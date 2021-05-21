@@ -31,29 +31,25 @@ class _RouteScreenState extends State<RouteScreen> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             final User driver = snapshot.data;
-            if (driver != null) {
-              if ((driver.profilephoto != "" &&
-                  driver.drivinglicense != "" &&
-                  driver.rc != "" &&
-                  driver.pancard != "" &&
-                  driver.vehicleinsurance != "")) {
-                if (driver.verify) {
-                  return MyHomePage(
-                    user: driver,
-                  );
-                } else {
-                  return Confirmationpage();
-                }
-              } else {
-                return Driverdatalist(
+            if ((driver.profilephoto != "" &&
+                driver.drivinglicense != "" &&
+                driver.rc != "" &&
+                driver.pancard != "" &&
+                driver.vehicleinsurance != "")) {
+              if (driver.verify) {
+                return MyHomePage(
                   user: driver,
                 );
+              } else {
+                return Confirmationpage();
               }
             } else {
-              return WelcomePage();
+              return Driverdatalist(
+                user: driver,
+              );
             }
           } else {
-            return CircularProgressIndicator();
+            return Center(child: CircularProgressIndicator());
           }
         });
   }

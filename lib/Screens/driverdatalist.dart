@@ -234,7 +234,7 @@ class _DriverdatalistState extends State<Driverdatalist> {
                       )
                     ]);
                   } else {
-                    return CircularProgressIndicator();
+                    return LinearProgressIndicator();
                   }
                 })
           ]),
