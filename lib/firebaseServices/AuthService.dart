@@ -1,10 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:driver_app/Models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:firebase_core/firebase_core.dart';
+
+FirebaseApp secondaryApp = Firebase.app('DriverApp');
+auth.FirebaseAuth _auth = auth.FirebaseAuth.instanceFor(app: secondaryApp);
 
 class AuthServices {
-  final auth.FirebaseAuth _auth = auth.FirebaseAuth.instance;
-
+  auth.User getUser(){
+    return _auth.currentUser;
+  }
   Future<User> getUserProfile(String uid) async {
     final document =
         await FirebaseFirestore.instance.collection("Drivers").doc(uid).get();

@@ -5,7 +5,7 @@ import 'package:driver_app/Screens/profilephoto/profilephoto.dart';
 import 'package:driver_app/Screens/widgets/Photoclick.dart';
 import 'package:driver_app/Screens/widgets/dialoginfomation.dart';
 import 'package:driver_app/Screens/widgets/helpdialog.dart';
-import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:driver_app/firebaseServices/AuthService.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
@@ -29,7 +29,7 @@ class _DriverdatalistState extends State<Driverdatalist> {
   void didChangeDependencies() {
     _userBloc = BlocProvider.of<UserBloc>(context);
     _userBloc.userEventSink
-        .add(FetchUser(userId: auth.FirebaseAuth.instance.currentUser.uid));
+        .add(FetchUser(userId: AuthServices().getUser().uid));
     super.didChangeDependencies();
   }
 

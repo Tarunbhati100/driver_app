@@ -7,12 +7,65 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:482727818900:android:f5f3be2ea6877c5652e681",
+        "android_client_info": {
+          "package_name": "com.mymegaminds.driver_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482727818900-j8j5mig3291fdpevkirdapjimm828af8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBm4XAjwdxeOx3Xg-HZXlmN06Rfl51q6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482727818900-j8j5mig3291fdpevkirdapjimm828af8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:482727818900:android:5b678b7989dc774e52e681",
         "android_client_info": {
           "package_name": "com.mymegaminds.meecar"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "482727818900-ikm74pr8pmagh300gcs3kb4lv1b9f2hh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mymegaminds.meecar",
+            "certificate_hash": "5962e9bd0671b69363a269850b1668c19be0f488"
+          }
+        },
+        {
+          "client_id": "482727818900-us1h4mvh1o8eoj2fmac5l1r8kdv222le.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mymegaminds.meecar",
+            "certificate_hash": "113cb5d853c01a139e9477a2633bec937285003e"
+          }
+        },
+        {
+          "client_id": "482727818900-vlpjbun2rrtd3ujeevgeon5ra2cn2cnq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mymegaminds.meecar",
+            "certificate_hash": "056247c5191234c0ff0b08beec58f87ca60dcbe2"
+          }
+        },
         {
           "client_id": "482727818900-j8j5mig3291fdpevkirdapjimm828af8.apps.googleusercontent.com",
           "client_type": 3

@@ -13,7 +13,14 @@ import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+
+  await Firebase.initializeApp(
+      name: "DriverApp",
+      options: FirebaseOptions(
+          apiKey: "AIzaSyCBm4XAjwdxeOx3Xg-HZXlmN06Rfl51q6U",
+          appId: "1:482727818900:android:f5f3be2ea6877c5652e681",
+          messagingSenderId: "meecar-85e42.appspot.com",
+          projectId: "meecar-85e42"));
 
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

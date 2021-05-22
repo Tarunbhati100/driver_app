@@ -29,13 +29,19 @@ class UserBloc extends Bloc {
           .doc(event.userId)
           .set(event.user.toJson(event.user.userId));
     } else if (event is FetchUser) {
-      FirebaseFirestore.instance
+      final doc = await FirebaseFirestore.instance
           .collection("Drivers")
           .doc(event.userId)
-          .snapshots()
-          .listen((event) {
-        userDataSink.add(User.fromMap(event.data()));
-      });
+          .get();
+      if (doc.exists) {
+        FirebaseFirestore.instance
+            .collection("Drivers")
+            .doc(event.userId)
+            .snapshots()
+            .listen((event) {
+          userDataSink.add(User.fromMap(event.data()));
+        });
+      }
     }
   }
 
